@@ -7,7 +7,7 @@
     </ul>
 
     <div class="mt-5">
-      <h5>Editar produtos atrelados:</h5>
+      <h5>Editar produtos atribuídos:</h5>
       <form @submit.prevent="adicionarProduto">
         <div v-for="produto in produtosDisponiveis" :key="produto.id" class="form-check">
           <input type="checkbox" :id="'produto-' + produto.id" v-model="produtosSelecionados" :value="produto" class="form-check-input">
@@ -26,7 +26,7 @@ export default {
   name: 'Produtos',
   data() {
     return {
-      pagina: "Produtos atribuídos a clientes",
+      pagina: "Produtos atribuídos aos clientes",
       produtos: [],
       cliente: null,
       produtosSelecionados: [],
@@ -37,7 +37,7 @@ export default {
     Cabecalho,
   },
   methods: {
-    async getProduto() {
+    async getCliente() {
       const req = await fetch("http://localhost:3000/clientes/" + this.$route.params.idcliente);
       const data = await req.json();
       this.produtos = data.produtos
@@ -55,7 +55,7 @@ export default {
         body: JSON.stringify({ produtos: produtosSelecionados })
       });
       
-      this.getProduto();
+      this.getCliente();
       
       this.produtosSelecionados = [];
     },
@@ -66,8 +66,16 @@ export default {
     }
   },
   mounted() {
-    this.getProduto();
-    this.getProdutosDisponiveis();
-  }
+  this.getCliente().then(() => {
+    this.getProdutosDisponiveis().then(() => {
+      this.produtosDisponiveis.forEach(produto => {
+        if (this.produtos.some(p => p.id === produto.id)) {
+          this.produtosSelecionados.push(produto);
+        }
+      });
+    });
+  });
+},
+
 }
 </script>

@@ -26,6 +26,16 @@
           "nome": "Smartphone",
           "ativo": true,
           "id": "7b8a"
+        },
+        {
+          "id": "4d42",
+          "nome": "Computador",
+          "ativo": true
+        },
+        {
+          "id": "0371",
+          "nome": "Teclado",
+          "ativo": true
         }
       ],
       "ativo": true
