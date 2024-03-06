@@ -1,17 +1,36 @@
 <template>
-    <Cabecalho :nome-pagina="pagina"/>
+    <div class="container">
+        <Cabecalho :nome-pagina="pagina"/>
+        <Table :colunas="colunas" :data="data"/>
+    </div>
+
 </template>
 <script>
     import Cabecalho from "../components/Cabecalho.vue";
+    import Table from "../components/TableCliente.vue";
     export default{
         name:'Clientes',
         data(){
             return{
-                pagina: 'Clientes'
+                pagina: 'Clientes',
+                colunas: ['Nome', 'Documento', 'Telefone', 'Email', 'Produtos', 'Ações'],
+                data:[]
             }
         },
         components:{
-            Cabecalho
+            Cabecalho,
+            Table
+        },
+        methods:{
+            async getClientes(){
+                const req = await fetch("http://localhost:3000/clientes");
+                const data = await req.json();
+                this.data = data
+                
+            }
+        },
+        mounted(){
+            this.getClientes();
         }
     }
 </script>
