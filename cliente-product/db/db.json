@@ -20,5 +20,12 @@
         ],
         "ativo": true
         }
+    ],
+    "produtos":[
+        {
+        "nome": "Smartphone",
+        "ativo": true,
+        "id": "7b8a"
+        }
     ]
 }

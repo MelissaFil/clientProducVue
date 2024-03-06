@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <router-link to="/clientes" class="nav-link">Clientes</router-link>
-
+        <router-link to="/produtos" class="nav-link">Produtos</router-link>
       </div>
     </div>
   </div>
