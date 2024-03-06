@@ -1,6 +1,10 @@
 <template>
   <div class="container my-5">
     <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
+    <div v-show="res" class="alert alert-success">
+      <p type="text" class="text-success" >{{ res }}</p>
+    </div>
+
     <ul class="list-group">
       <li class="list-group-item active" aria-current="true">{{ cliente }}</li>
       <li class="list-group-item" v-for="produto in produtos">{{ produto.nome }}</li>
@@ -30,7 +34,8 @@ export default {
       produtos: [],
       cliente: null,
       produtosSelecionados: [],
-      produtosDisponiveis: [] 
+      produtosDisponiveis: [],
+      res:null 
     }
   },
   components: {
@@ -57,7 +62,10 @@ export default {
       
       this.getCliente();
       
-      this.produtosSelecionados = [];
+      this.res = "Produto adicionado com sucesso!"
+        setTimeout(() => {
+            this.res = '';
+        }, 5000);
     },
     async getProdutosDisponiveis() {
       const req = await fetch("http://localhost:3000/produtos");

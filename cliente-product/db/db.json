@@ -8,8 +8,13 @@
       "email": "melissafilgueira8@gmail.com",
       "produtos": [
         {
-          "id": "8e5d",
-          "nome": "Monitor",
+          "nome": "Smartphone",
+          "ativo": true,
+          "id": "7b8a"
+        },
+        {
+          "id": "4d42",
+          "nome": "Computador",
           "ativo": true
         }
       ],
@@ -30,11 +35,6 @@
         {
           "id": "4d42",
           "nome": "Computador",
-          "ativo": true
-        },
-        {
-          "id": "0371",
-          "nome": "Teclado",
           "ativo": true
         }
       ],
