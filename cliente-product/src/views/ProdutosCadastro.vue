@@ -1,4 +1,4 @@
-<<template>
+<template>
     <div class="container">
         <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
         <Form :campos="campos" @cadastrar="createProduto" />

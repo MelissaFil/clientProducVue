@@ -1,22 +1,13 @@
 {
   "clientes": [
     {
-      "id": "d56f",
-      "nome": "Melissa Filgueira de Souza",
-      "documento": "cdcsdcsdc",
-      "telefone": "55849863470",
-      "email": "melissafilgueira8@gmail.com",
+      "id": "5440",
+      "nome": "Melissa Outro de Souza",
+      "documento": "wdqwdqwdq",
+      "telefone": "84986347019",
+      "email": "melissafilgueira@gmail.com",
       "produtos": [
-        {
-          "nome": "Smartphone",
-          "ativo": true,
-          "id": "7b8a"
-        },
-        {
-          "id": "9ada",
-          "nome": "Computador gamer",
-          "ativo": true
-        }
+        "7b8a"
       ],
       "ativo": true
     }
@@ -30,6 +21,11 @@
     {
       "id": "4d42",
       "nome": "Computador",
+      "ativo": true
+    },
+    {
+      "id": "ddb6",
+      "nome": "Mouse",
       "ativo": true
     }
   ]
