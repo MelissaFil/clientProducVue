@@ -1,13 +1,42 @@
 {
   "clientes": [
     {
-      "id": "5440",
-      "nome": "Melissa Outro de Souza",
-      "documento": "wdqwdqwdq",
-      "telefone": "84986347019",
-      "email": "melissafilgueira@gmail.com",
+      "id": "7bd2",
+      "nome": "Melissa Filgueira de Souza",
+      "documento": "dewewdw",
+      "telefone": "55849863470",
+      "email": "melissafilgueira8@gmail.com",
       "produtos": [
-        "7b8a"
+        {
+          "id": "4d42",
+          "nome": "Computador",
+          "ativo": true
+        },
+        {
+          "nome": "Smartphone",
+          "ativo": true,
+          "id": "7b8a"
+        }
+      ],
+      "ativo": true
+    },
+    {
+      "id": "8497",
+      "nome": "Danilly Marques da Silva",
+      "documento": "65685458484",
+      "telefone": "849584546545",
+      "email": "danily@dany.com",
+      "produtos": [
+        {
+          "id": "ddb6",
+          "nome": "Mouse",
+          "ativo": true
+        },
+        {
+          "nome": "Smartphone",
+          "ativo": true,
+          "id": "7b8a"
+        }
       ],
       "ativo": true
     }
@@ -26,6 +55,11 @@
     {
       "id": "ddb6",
       "nome": "Mouse",
+      "ativo": true
+    },
+    {
+      "id": "0371",
+      "nome": "Teclado",
       "ativo": true
     }
   ]
