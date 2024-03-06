@@ -8,14 +8,9 @@
       "email": "melissafilgueira8@gmail.com",
       "produtos": [
         {
-          "id": "4d42",
-          "nome": "Computador",
+          "id": "8e5d",
+          "nome": "Monitor",
           "ativo": true
-        },
-        {
-          "nome": "Smartphone",
-          "ativo": true,
-          "id": "7b8a"
         }
       ],
       "ativo": true
@@ -27,11 +22,6 @@
       "telefone": "849584546545",
       "email": "danily@dany.com",
       "produtos": [
-        {
-          "id": "ddb6",
-          "nome": "Mouse",
-          "ativo": true
-        },
         {
           "nome": "Smartphone",
           "ativo": true,
@@ -60,6 +50,11 @@
     {
       "id": "0371",
       "nome": "Teclado",
+      "ativo": true
+    },
+    {
+      "id": "8e5d",
+      "nome": "Monitor",
       "ativo": true
     }
   ]

@@ -1,37 +1,73 @@
 <template>
-     <div class="container my-5">
-        <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
-        <ul class="list-group">
-            <li class="list-group-item active" aria-current="true">{{ cliente }} </li>
-            <li class="list-group-item" v-for="produto in produtos">{{ produto.nome }}</li>
-        </ul>
+  <div class="container my-5">
+    <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
+    <ul class="list-group">
+      <li class="list-group-item active" aria-current="true">{{ cliente }}</li>
+      <li class="list-group-item" v-for="produto in produtos">{{ produto.nome }}</li>
+    </ul>
+
+    <div class="mt-5">
+      <h5>Editar produtos atrelados:</h5>
+      <form @submit.prevent="adicionarProduto">
+        <div v-for="produto in produtosDisponiveis" :key="produto.id" class="form-check">
+          <input type="checkbox" :id="'produto-' + produto.id" v-model="produtosSelecionados" :value="produto" class="form-check-input">
+          <label :for="'produto-' + produto.id" class="form-check-label">{{ produto.nome }}</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar Produto</button>
+      </form>
     </div>
+  </div>
 </template>
+
 <script>
-    import Cabecalho from "../components/Cabecalho.vue";
-    export default{
-        name:'Produtos',
-        data(){
-            return{
-                pagina: "Produtos atribuídos a clientes",
-                produtos:[],
-                cliente: null
-            }
-        },
-        components:{
-            Cabecalho,
-        },
-        methods:{
-            async getProduto(){
-                const req = await fetch("http://localhost:3000/clientes/"+this.$route.params.idcliente);
-                const data = await req.json();
-                this.produtos = data.produtos
-                this.cliente = data.nome
-                
-            }
-        },
-        mounted(){
-            this.getProduto();
-        }
+import Cabecalho from "../components/Cabecalho.vue";
+
+export default {
+  name: 'Produtos',
+  data() {
+    return {
+      pagina: "Produtos atribuídos a clientes",
+      produtos: [],
+      cliente: null,
+      produtosSelecionados: [],
+      produtosDisponiveis: [] 
     }
+  },
+  components: {
+    Cabecalho,
+  },
+  methods: {
+    async getProduto() {
+      const req = await fetch("http://localhost:3000/clientes/" + this.$route.params.idcliente);
+      const data = await req.json();
+      this.produtos = data.produtos
+      this.cliente = data.nome
+    },
+    async adicionarProduto() {
+      const idCliente = this.$route.params.idcliente;
+      const produtosSelecionados = this.produtosSelecionados;
+      
+      await fetch(`http://localhost:3000/clientes/${idCliente}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ produtos: produtosSelecionados })
+      });
+      
+      this.getProduto();
+      
+      this.produtosSelecionados = [];
+    },
+    async getProdutosDisponiveis() {
+      const req = await fetch("http://localhost:3000/produtos");
+      const data = await req.json();
+      this.produtosDisponiveis = data;
+    }
+  },
+  mounted() {
+    this.getProduto();
+    this.getProdutosDisponiveis();
+  }
+}
 </script>
