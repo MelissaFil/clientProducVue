@@ -4,7 +4,7 @@
       <label :for="campo" class="form-label">{{ campo }}</label>
       <template v-if="campo === 'Produtos'">
         <div v-for="produto in produtos" :key="produto.id">
-          <input type="checkbox" :id="produto.id" v-model="formulario.produtos" :value="produto.id">
+          <input type="checkbox" :id="produto.id" v-model="formulario.produtos" :value="produto">
           <label class="mx-2" :for="produto.id">{{ produto.nome }}</label>
         </div>
       </template>
