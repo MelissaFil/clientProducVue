@@ -11,7 +11,7 @@
       <tr v-for="(item, index) in data" :key="index">
         <td v-for="(coluna, index) in colunas" :key="index">
           <template v-if="coluna.toLowerCase() === 'produtos'">
-            <router-link v-if="item.produtos && item.produtos.length > 0" to="/" class="btn btn-link">Produtos</router-link>
+            <router-link v-if="item.produtos> 0" to="/" class="btn btn-link">Produtos</router-link>
           </template>
           <template v-else-if="item[coluna.toLowerCase()]">
             <!-- Caso contrário, exibe o valor normalmente -->
