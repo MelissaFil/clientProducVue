@@ -13,7 +13,7 @@
         data(){
             return{
                 pagina: 'Clientes',
-                colunas: ['Nome', 'Documento', 'Telefone', 'Email', 'Produtos', 'Ações'],
+                colunas: ['Nome', 'Documento', 'Telefone', 'Email', 'Produtos'],
                 data:[]
             }
         },
