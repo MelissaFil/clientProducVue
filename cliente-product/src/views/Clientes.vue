@@ -7,7 +7,7 @@
 </template>
 <script>
     import Cabecalho from "../components/Cabecalho.vue";
-    import Table from "../components/TableCliente.vue";
+    import Table from "../components/Table.vue";
     export default{
         name:'Clientes',
         data(){
