@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Cabecalho :nome-pagina="pagina"/>
+        <Cabecalho :tipo="'exibir'" :nome-pagina="pagina"/>
         <Table :colunas="colunas" :data="data"/>
     </div>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Cabecalho :nome-pagina="pagina"/>
+        <Cabecalho :tipo="'exibir'" :nome-pagina="pagina"/>
         <Table :colunas="colunas" :data="data"/>
     </div>
 
@@ -13,6 +13,7 @@
         data(){
             return{
                 pagina: 'Clientes',
+                
                 colunas: ['Nome', 'Documento', 'Telefone', 'Email', 'Produtos'],
                 data:[]
             }
