@@ -18,8 +18,8 @@
           </template>
         </td>
         <td>
-          <button type="button" class="btn btn-outline-danger" v-if="item.ativo" @click="toggleAtivo(item)">Desativar</button>
-          <button type="button" class="btn btn-outline-success" v-else @click="toggleAtivo(item)">Ativar</button>
+          <button type="button" class="btn btn-danger" v-if="item.ativo" @click="toggleAtivo(item)"><i class="bi bi-power"></i></button>
+          <button type="button" class="btn btn-success" v-else @click="toggleAtivo(item)"><i class="bi bi-power"></i></button>
         </td>
       </tr>
     </tbody>
@@ -34,8 +34,16 @@ export default {
     data: Array
   },
   methods: {
-    toggleAtivo(item) {
-      item.ativo = !item.ativo;
+    async toggleAtivo(item) {
+      
+      await fetch(`http://localhost:3000/produtos/${item.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ativo: !item.ativo })
+            });
+            item.ativo = !item.ativo;
     }
   }
 };

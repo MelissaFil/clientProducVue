@@ -44,7 +44,7 @@
   "produtos": [
     {
       "nome": "Smartphone",
-      "ativo": true,
+      "ativo": false,
       "id": "7b8a"
     },
     {
@@ -60,7 +60,7 @@
     {
       "id": "0371",
       "nome": "Teclado",
-      "ativo": true
+      "ativo": false
     },
     {
       "id": "8e5d",
@@ -70,7 +70,7 @@
     {
       "id": "2608",
       "nome": "Cabo HDMI",
-      "ativo": true
+      "ativo": false
     }
   ]
 }
