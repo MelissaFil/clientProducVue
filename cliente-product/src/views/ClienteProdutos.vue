@@ -1,7 +1,7 @@
 <template>
   <div class="container my-5">
     <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
-    <Alerta :mensagem="res" />
+    <Alerta :mensagem="res" :type="'success'"/>
     <ul class="list-group">
       <li class="list-group-item active" aria-current="true">{{ cliente }}</li>
       <li class="list-group-item" v-for="produto in produtos">{{ produto.nome }}</li>
