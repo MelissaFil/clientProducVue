@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
-        <Alerta :mensagem="res" />
+        <Alerta :mensagem="res" :type="'success'"/>
         <Form :campos="campos" @cadastrar="createProduto" />
     </div>
 </template>

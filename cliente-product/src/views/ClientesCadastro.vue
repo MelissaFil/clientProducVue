@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
-    <Alerta :mensagem="res" />
+    <Alerta :mensagem="res" :type="typeAlert"/>
     <Form :campos="campos" :produtos="produtos" @cadastrar="createProduto" />
   </div>
 </template>
@@ -10,6 +10,8 @@
 import Cabecalho from "../components/Cabecalho.vue";
 import Form from "../components/Form.vue";
 import Alerta from "../components/Alert.vue";
+import { cpf } from 'cpf-cnpj-validator';
+
 
 
 export default {
@@ -19,7 +21,8 @@ export default {
       pagina: "Cadastro de clientes",
       campos: ["Nome", "Documento", "Telefone", "Email", "Produtos"],
       produtos: [],
-      res: null
+      res: null,
+      typeAlert: null
     };
   },
   components: {
@@ -29,6 +32,17 @@ export default {
   },
   methods: {
     async createProduto(dados) {
+
+
+      if (!cpf.isValid(dados.Documento)) {
+        this.res = "Digite um CPF válido";
+        this.typeAlert="danger"
+        setTimeout(() => {
+          this.res = '';
+        }, 2000);
+        return; 
+      }
+
       const data = {
         nome: dados.Nome,
         documento: dados.Documento,
@@ -46,6 +60,7 @@ export default {
         body: dataJson
       });
       this.res = "Cliente cadastrado com sucesso!"
+      this.typeAlert="success"
       setTimeout(() => {
           this.res = '';
       }, 2000);
