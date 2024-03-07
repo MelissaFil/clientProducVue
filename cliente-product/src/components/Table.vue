@@ -33,17 +33,10 @@ export default {
     colunas: Array,
     data: Array
   },
-  methods: {
-    async toggleAtivo(item) {
+   methods: {
+    toggleAtivo(item) {
+      this.$emit("toggleAtivo", item);
       
-      await fetch(`http://localhost:3000/produtos/${item.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ ativo: !item.ativo })
-            });
-            item.ativo = !item.ativo;
     }
   }
 };

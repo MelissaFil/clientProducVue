@@ -44,7 +44,7 @@
   "produtos": [
     {
       "nome": "Smartphone",
-      "ativo": false,
+      "ativo": true,
       "id": "7b8a"
     },
     {
