@@ -3,7 +3,9 @@
     <thead>
       <tr>
         <th v-for="(coluna, index) in colunas" :key="index" scope="col">{{ coluna }}</th>
-        <th scope="col">Ações</th>
+        <th scope="col">Status</th>
+
+        <th scope="col">Ativar/desativar</th>
 
       </tr>
     </thead>
@@ -16,6 +18,10 @@
           <template v-else-if="item[coluna.toLowerCase()]">
             {{ item[coluna.toLowerCase()] }}
           </template>
+        </td>
+        <td>
+          <span class="badge text-bg-success" v-if="item.ativo">Ativo</span>
+          <span class="badge text-bg-danger" v-else>Inativo</span>
         </td>
         <td>
           <button type="button" class="btn btn-danger" v-if="item.ativo" @click="toggleAtivo(item)"><i class="bi bi-power"></i></button>
