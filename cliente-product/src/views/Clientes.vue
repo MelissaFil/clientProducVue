@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Cabecalho :tipo="'exibir'" :nome-pagina="pagina"/>
-        <Table :colunas="colunas" :data="data"/>
+        <Table :colunas="colunas" :data="data" @toggleAtivo="toggleCliente"/>
     </div>
 
 </template>
@@ -28,6 +28,17 @@
                 const data = await req.json();
                 this.data = data
                 
+            },
+            async toggleCliente(item) {
+            await fetch(`http://localhost:3000/clientes/${item.id}`, {
+                method: "PATCH",
+                headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ ativo: !item.ativo })
+            });
+
+            this.getClientes();
             }
         },
         mounted(){
