@@ -8,6 +8,10 @@ cd cliente-product
 ```
 npm install
 ```
+## Backend
+```
+npm run backend
+```
 
 ### Compiles and hot-reloads for development
 ```

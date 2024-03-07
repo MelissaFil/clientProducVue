@@ -1,0 +1,161 @@
+{
+  "clientes": [
+    {
+      "id": "7bd2",
+      "nome": "Melissa Filgueira de Souza",
+      "documento": "dewewdw",
+      "telefone": "55849863470",
+      "email": "melissafilgueira8@gmail.com",
+      "produtos": [
+        {
+          "id": "4d42",
+          "nome": "Computador",
+          "ativo": true
+        },
+        {
+          "id": "0371",
+          "nome": "Teclado",
+          "ativo": true
+        },
+        {
+          "id": "8e5d",
+          "nome": "Monitor",
+          "ativo": true
+        },
+        {
+          "id": "c4e6",
+          "nome": "Fone",
+          "ativo": true
+        }
+      ],
+      "ativo": true
+    },
+    {
+      "id": "8497",
+      "nome": "Danilly Marques da Silva",
+      "documento": "65685458484",
+      "telefone": "849584546545",
+      "email": "danily@dany.com",
+      "produtos": [
+        {
+          "nome": "Smartphone",
+          "ativo": true,
+          "id": "7b8a"
+        },
+        {
+          "id": "4d42",
+          "nome": "Computador",
+          "ativo": true
+        }
+      ],
+      "ativo": true
+    },
+    {
+      "id": "5682",
+      "nome": "Marcos Oliveira",
+      "documento": "5485485748",
+      "telefone": "23465465465",
+      "email": "marcos@marcos.com",
+      "produtos": [
+        {
+          "id": "0371",
+          "nome": "Teclado",
+          "ativo": true
+        },
+        {
+          "id": "2608",
+          "nome": "Cabo HDMI",
+          "ativo": true
+        }
+      ],
+      "ativo": true
+    },
+    {
+      "id": "4f65",
+      "nome": "Bruno Souza",
+      "documento": "93737712050",
+      "telefone": "55849863470",
+      "email": "bru@gmai.com",
+      "produtos": [
+        {
+          "id": "4d42",
+          "nome": "Computador",
+          "ativo": true
+        },
+        {
+          "id": "2608",
+          "nome": "Cabo HDMI",
+          "ativo": true
+        }
+      ],
+      "ativo": true
+    },
+    {
+      "id": "ebf4",
+      "nome": "Bruno Oliveira",
+      "documento": "93737712050",
+      "telefone": "65367287278",
+      "email": "fsfsdf",
+      "produtos": [
+        {
+          "id": "4d42",
+          "nome": "Computador",
+          "ativo": true
+        }
+      ],
+      "ativo": true
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Smartphone",
+      "ativo": false,
+      "id": "7b8a"
+    },
+    {
+      "id": "4d42",
+      "nome": "Computador",
+      "ativo": true
+    },
+    {
+      "id": "ddb6",
+      "nome": "Mouse",
+      "ativo": false
+    },
+    {
+      "id": "0371",
+      "nome": "Teclado",
+      "ativo": true
+    },
+    {
+      "id": "8e5d",
+      "nome": "Monitor",
+      "ativo": true
+    },
+    {
+      "id": "2608",
+      "nome": "Cabo HDMI",
+      "ativo": true
+    },
+    {
+      "id": "61cc",
+      "nome": "Fone de ouvido",
+      "ativo": true
+    },
+    {
+      "id": "c4e6",
+      "nome": "Fone",
+      "ativo": true
+    },
+    {
+      "id": "dd31",
+      "nome": "CPU",
+      "ativo": true
+    },
+    {
+      "id": "21fb",
+      "nome": "Gabinete",
+      "ativo": true
+    }
+  ]
+}
