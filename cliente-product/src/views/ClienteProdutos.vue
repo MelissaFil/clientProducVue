@@ -69,16 +69,18 @@ export default {
     async getProdutosDisponiveis() {
       const req = await fetch("http://localhost:3000/produtos");
       const data = await req.json();
-      this.produtosDisponiveis = data;
+      this.produtosDisponiveis = data.filter(produto => produto.ativo)
     }
   },
   mounted() {
   this.getCliente().then(() => {
     this.getProdutosDisponiveis().then(() => {
       this.produtosDisponiveis.forEach(produto => {
+      
         if (this.produtos.some(p => p.id === produto.id)) {
           this.produtosSelecionados.push(produto);
         }
+        
       });
     });
   });

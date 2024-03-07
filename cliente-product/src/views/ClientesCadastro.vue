@@ -53,7 +53,7 @@ export default {
     async getProdutos() {
       const req = await fetch("http://localhost:3000/produtos");
       const data = await req.json();
-      this.produtos = data;
+      this.produtos = data.filter(produto => produto.ativo);
     }
   },
   mounted() {
