@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
+        <Alerta :mensagem="res" />
         <Form :campos="campos" @cadastrar="createProduto" />
     </div>
 </template>
@@ -8,6 +9,7 @@
 <script>
 import Cabecalho from "../components/Cabecalho.vue";
 import Form from "../components/Form.vue";
+import Alerta from "../components/Alert.vue";
 
 export default {
     name:'ProdutosCadastro',
@@ -15,11 +17,13 @@ export default {
         return{
             pagina: 'Cadastro de produtos',
             campos: ['Nome'],
+            res: null
         }
     },
     components:{
         Cabecalho,
-        Form
+        Form,
+        Alerta
     },
     methods:{
         async createProduto(dados){
@@ -35,6 +39,10 @@ export default {
                 headers: { "Content-Type" : "application/json" },
                 body: dataJson
             });
+            this.res = "Produto cadastrado com sucesso!"
+            setTimeout(() => {
+                this.res = '';
+            }, 2000);
         }
     }
 };

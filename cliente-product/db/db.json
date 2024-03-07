@@ -66,6 +66,11 @@
       "id": "8e5d",
       "nome": "Monitor",
       "ativo": true
+    },
+    {
+      "id": "2608",
+      "nome": "Cabo HDMI",
+      "ativo": true
     }
   ]
 }

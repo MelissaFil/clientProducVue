@@ -1,10 +1,7 @@
 <template>
   <div class="container my-5">
     <Cabecalho :tipo="'cadastro'" :nome-pagina="pagina"/>
-    <div v-show="res" class="alert alert-success">
-      <p type="text" class="text-success" >{{ res }}</p>
-    </div>
-
+    <Alerta :mensagem="res" />
     <ul class="list-group">
       <li class="list-group-item active" aria-current="true">{{ cliente }}</li>
       <li class="list-group-item" v-for="produto in produtos">{{ produto.nome }}</li>
@@ -25,6 +22,7 @@
 
 <script>
 import Cabecalho from "../components/Cabecalho.vue";
+import Alerta from "../components/Alert.vue";
 
 export default {
   name: 'Produtos',
@@ -40,6 +38,7 @@ export default {
   },
   components: {
     Cabecalho,
+    Alerta
   },
   methods: {
     async getCliente() {
@@ -63,9 +62,9 @@ export default {
       this.getCliente();
       
       this.res = "Produto adicionado com sucesso!"
-        setTimeout(() => {
-            this.res = '';
-        }, 5000);
+      setTimeout(() => {
+          this.res = '';
+      }, 2000);
     },
     async getProdutosDisponiveis() {
       const req = await fetch("http://localhost:3000/produtos");
