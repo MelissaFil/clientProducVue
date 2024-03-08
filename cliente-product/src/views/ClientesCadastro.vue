@@ -11,6 +11,7 @@ import Cabecalho from "../components/Cabecalho.vue";
 import Form from "../components/Form.vue";
 import Alerta from "../components/Alert.vue";
 import { cpf } from 'cpf-cnpj-validator';
+import {isEmail, isMobilePhone} from 'validator';
 
 
 
@@ -42,6 +43,22 @@ export default {
         }, 2000);
         return; 
       }
+      if (!isEmail(dados.Email)) {
+        this.res = "Digite um e-mail válido";
+        this.typeAlert = "danger";
+        setTimeout(() => {
+          this.res = '';
+        }, 2000);
+        return; 
+      }
+      if (!isMobilePhone(dados.Telefone, 'pt-BR')) {
+        this.res = "Digite um telefone válido. Ex: 5584000000000";
+        this.typeAlert = "danger";
+        setTimeout(() => {
+          this.res = '';
+        }, 2000);
+        return;
+    }
 
       const data = {
         nome: dados.Nome,

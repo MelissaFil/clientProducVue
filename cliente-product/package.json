@@ -14,6 +14,7 @@
     "core-js": "^3.8.3",
     "cpf-cnpj-validator": "^1.0.3",
     "json-server": "^1.0.0-alpha.23",
+    "validator": "^13.11.0",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3"
