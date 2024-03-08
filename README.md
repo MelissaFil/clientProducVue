@@ -2,7 +2,6 @@
 Após clonar o projeto acesse no seu terminal:
 
 ```
-cd clientProductVue
 cd cliente-product
 
 ```
